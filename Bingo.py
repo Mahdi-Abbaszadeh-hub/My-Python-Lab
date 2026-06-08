@@ -38,7 +38,7 @@ while True:
     answer_result = check_answer(answer_input)
 
     # Check the boolean part of the returned tuple (Index 0)
-    if answer_result[0] == False:
+    if not answer_result[0]:
         print(answer_result[1])  # Display the feedback (higher/lower)
 
     else:

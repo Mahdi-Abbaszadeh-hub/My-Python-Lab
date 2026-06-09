@@ -15,3 +15,14 @@ print(Obj_1.print_info())
 print(Obj_2.print_info())
 
 # ---------------------------------
+
+# Returns the class name when the object is printed
+class Employee:
+    def __str__(self):
+        return self.__class__.__name__
+
+
+emp = Employee()
+print(emp)  # --> output = Employee
+
+# ---------------------------------

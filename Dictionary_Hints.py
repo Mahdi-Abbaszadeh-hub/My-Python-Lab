@@ -20,3 +20,32 @@ my_dic_2["name"] = "hasan"
 # remove key and value in dic
 my_dic_2.pop("id")
 print(my_dic_2)
+
+# --------------------------
+
+def most_frequent(elements):
+    """
+    Find the most frequently occurring element in a list.
+
+    Args:
+        elements (list): A list of hashable items (e.g. integers, strings).
+
+    Returns:
+        The element that appears most often in the list.
+
+    Example:
+        >>> most_frequent([1, 3, 1, 3, 2, 1])
+        1
+    """
+    frequency = {}
+    for element in elements:
+        if element not in frequency:
+            frequency[element] = 1
+        else:
+            frequency[element] += 1
+    return max(frequency, key=frequency.get)
+
+# --- Usage most_frequent ---
+
+numbers = [1, 3, 1, 3, 2, 1]
+print(most_frequent(numbers))

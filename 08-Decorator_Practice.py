@@ -101,3 +101,33 @@ say_hi()
 say_hi()
 
 # --------------------------------
+
+import datetime
+
+def run_if_even_minute(func):
+    """
+    A decorator that executes the decorated function only during even-numbered 
+    minutes of the hour. Otherwise, it prints a 'hiss' message.
+    """
+    def wrapper(*args, **kwargs):
+        current_minute = datetime.datetime.now().minute
+        if current_minute % 2 == 0:
+            return func(*args, **kwargs)
+        else:
+            print(f"[{current_minute}] Shhh! It's an odd minute.")
+    return wrapper
+
+@run_if_even_minute
+def say_hello():
+    """Prints a friendly greeting."""
+    print("Hi i'm here!")
+
+@run_if_even_minute
+def say_bye():
+    """Prints a farewell message."""
+    print('Bye Bye!')
+
+say_hello()
+say_bye()
+
+# --------------------------------

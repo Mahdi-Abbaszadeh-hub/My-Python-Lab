@@ -92,17 +92,3 @@ def unique_numbers(numbers):
 print(unique_numbers([1,2,2,3,4,4,5]))
 
 # --------------------------
-
-def x(text):
-    my_dic = {}
-    text = text.lower()
-    text = text.split()
-    for i in text:
-        if i not in my_dic:
-            my_dic[i] = 1
-        else:
-            my_dic[i] += 1
-
-    return my_dic
-
-print(x("Python is great and python is easy"))

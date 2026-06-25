@@ -49,3 +49,60 @@ def most_frequent(elements):
 
 numbers = [1, 3, 1, 3, 2, 1]
 print(most_frequent(numbers))
+
+# --------------------------
+
+def unique_numbers(numbers):
+    """
+    Identifies and extracts numbers that appear exactly once in the input list.
+
+    This function processes the input list to determine the frequency of each 
+    integer and returns a list containing only those elements that have a 
+    frequency count of exactly one.
+
+    Problem:
+    Given a list of integers where some elements may be repeated, how can 
+    we isolate the numbers that are strictly unique (i.e., appear only once)?
+
+    Args:
+        numbers (list[int]): A list of integers to be processed.
+
+    Returns:
+        list[int]: A list containing the integers that occurred exactly once 
+                   in the input list.
+
+    Example:
+        >>> unique_numbers([1, 2, 2, 3, 4, 4, 5])
+        [1, 3, 5]
+    """
+    my_dic = {}
+    my_list = []
+    for num in numbers:
+        if num not in my_dic:
+            my_dic[num] = 1
+        else:
+            my_dic[num] += 1
+    for key, value in my_dic.items():
+        if value == 1:
+            my_list.append(key)
+    return my_list
+
+# --- Usage most_frequent ---
+
+print(unique_numbers([1,2,2,3,4,4,5]))
+
+# --------------------------
+
+def x(text):
+    my_dic = {}
+    text = text.lower()
+    text = text.split()
+    for i in text:
+        if i not in my_dic:
+            my_dic[i] = 1
+        else:
+            my_dic[i] += 1
+
+    return my_dic
+
+print(x("Python is great and python is easy"))

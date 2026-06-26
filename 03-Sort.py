@@ -15,3 +15,16 @@ a.sort(key=lambda x: x[1])
 
 # Print the sorted result
 print(a)
+
+#--------------------------
+
+"""
+Sort a list in descending order in place.
+"""
+
+numbers = [5, 2, 9, 1, 7]
+numbers.sort(reverse=True)
+
+print(numbers)  # [9, 7, 5, 2, 1]
+
+#--------------------------
